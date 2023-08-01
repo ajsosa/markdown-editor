@@ -40,6 +40,8 @@ class MarkdownTextInput extends StatefulWidget {
   /// Default value is true.
   final bool insertLinksByDialog;
 
+  final String? inputDecorationLabel;
+
   /// Constructor for [MarkdownTextInput]
   MarkdownTextInput(
     this.onTextChanged,
@@ -52,6 +54,7 @@ class MarkdownTextInput extends StatefulWidget {
     this.textStyle,
     this.controller,
     this.insertLinksByDialog = true,
+    this.inputDecorationLabel,
   });
 
   @override
@@ -125,6 +128,7 @@ class _MarkdownTextInputState extends State<MarkdownTextInput> {
             decoration: InputDecoration(
               enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.secondary)),
               focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.secondary)),
+              labelText: widget.inputDecorationLabel,
               hintText: widget.label,
               hintStyle: const TextStyle(color: Color.fromRGBO(63, 61, 86, 0.5)),
               contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
